@@ -1,0 +1,22 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        
+        "use": "@vercel/static-build",
+       
+      },
+      {
+        "src": "backend/api/**/*.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      { "src": "/api/workouts/:id", "dest": "backend/api/workouts/:id" },
+      { "src": "/api/users/signup", "dest": "backend/api/users/signup" },
+      { "src": "/api/users/login", "dest": "backend/api/users/login" },
+      { "src": "/api/(.*)", "dest": "backend/api/$1" },
+     
+    ]
+  }
+  
